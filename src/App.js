@@ -1,4 +1,4 @@
-  import './App.css';
+import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
@@ -25,7 +25,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor='#021748';
       showAlert("Dark Mode has been enabled","success");
-      document.title="TextUtils:DarkMode"
+      //document.title="TextUtils:DarkMode"
       // setInterval(() => {
       //   document.title="TextUtils is amazing";
       // }, 2000);
@@ -37,7 +37,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor='white';
       showAlert("Light Mode has been enabled","success");
-      document.title="TextUtils:LightMode"
+      //document.title="TextUtils:LightMode"
     }
   }
   return (
@@ -48,10 +48,11 @@ function App() {
     <Alert alert={alert}/>
     <div className="container my-3">
       <Routes>
-        <Route exact path="/about" element={<About/>} />
+        <Route exact path="/about" element={<About mode={mode}/>} />
       </Routes>
       <Routes>
-        <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+        <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try Textutils - Word Counter, 
+        Character Counter, Remove extra Spaces" mode={mode} />} />
       </Routes>
     </div>
     </BrowserRouter>
